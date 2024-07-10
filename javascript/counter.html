@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+
+<button id="start">start counter</button>
+<button id="stop">stop counter</button>
+<div id="counter">this is counter.</div>
+
+
+
+</body>
+<script>
+    let curr_count=0;
+    const counter=function(){
+    for(let i=1;i<Infinity;i++){
+        curr_count+=1;
+        return curr_count;
+    }
+    
+}
+function startcounting(){
+    startcounter=setInterval(counterchange, 1000);
+
+    function counterchange(){
+        document.getElementById('counter').innerHTML=`counter:${counter()}`
+    }
+}
+
+function stopcounting(){
+    clearInterval(startcounter)
+}
+
+document.querySelector('#start').addEventListener('click',startcounting)
+stop_button=document.querySelector('#stop').addEventListener('click',stopcounting)
+
+</script>
+</html>
